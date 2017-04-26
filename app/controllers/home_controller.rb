@@ -23,7 +23,7 @@ class HomeController < ApplicationController
       redirect_to action: :index
     end
     Message.send_sms(params[:sms][:phone_number], params[:sms][:message], params[:sms][:dog_pictures].to_i)
-    flash[:success] = "Pictures have been sent successfully!"
+    flash[:success] = "Thank You! Pictures have been sent successfully!"
     redirect_to action: :index
   end
 

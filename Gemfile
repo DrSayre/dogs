@@ -24,6 +24,7 @@ gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 gem 'stripe'
 gem 'rails-assets-jquery-mask', source: 'https://rails-assets.org'
 gem 'phonelib'
+gem 'dotenv-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

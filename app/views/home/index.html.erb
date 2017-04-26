@@ -6,20 +6,20 @@
     <div class="alert alert-success" role="alert"><strong><%= flash[:success] %></strong></div>
   <% end %>
   <h1>Automatically Send Dog Pictures to your Friends!</h1>
-  <p class='lead'>You submit a phone number, message, and pay a few dollars, and we will deliever that phone number pictures of dogs!</p>
+  <p class='lead'>You submit a phone number, message, and pay a few dollars, and we will deliever pictures of dogs to that phone number!</p>
   <ul>
     <h3><i class="fa fa-smile-o" aria-hidden="true"></i> Send dogs to your friends to make them happy!</h3>
-    <h3><i class="fa fa-heart" aria-hidden="true"></i> Send dogs to your dog loving friends</h3>
+    <h3><i class="fa fa-heart" aria-hidden="true"></i> Send dogs to your dog loving friends!</h3>
     <h3><i class="fa fa-crosshairs" aria-hidden="true"></i> Send dogs to your friends as a prank!</h3>
   </ul>
   <%= form_for :sms do |f| %>
     <div class='form-group'>
       <%= f.label :phone_number %><br>
-      <%= f.text_field :phone_number, class: 'form-control' %>
+      <%= f.text_field :phone_number, {class: 'form-control', onkeypress: 'return event.charCode >= 48 && event.charCode <= 57', maxlength: 10, size: 10} %>
     </div>
     <div class='form-group'>
       <%= f.label :message %><br>
-      <%= f.text_area :message, class: 'form-control' %>
+      <%= f.text_area :message, {class: 'form-control', maxlength: 1600} %>
     </div>
     <div class='form-group'>
       <%= f.label :dog_pictures, 'Select your package' %><br>
