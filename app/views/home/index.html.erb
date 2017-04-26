@@ -1,0 +1,39 @@
+<center>
+  <% if flash[:error] %>
+    <div class="alert alert-danger" role="alert"><strong><%= flash[:error] %></strong></div>
+  <% end %>
+  <% if flash[:success] %>
+    <div class="alert alert-success" role="alert"><strong><%= flash[:success] %></strong></div>
+  <% end %>
+  <h1>Automatically Send Dog Pictures to your Friends!</h1>
+  <p class='lead'>You submit a phone number, message, and pay a few dollars, and we will deliever that phone number pictures of dogs!</p>
+  <ul>
+    <h3><i class="fa fa-smile-o" aria-hidden="true"></i> Send dogs to your friends to make them happy!</h3>
+    <h3><i class="fa fa-heart" aria-hidden="true"></i> Send dogs to your dog loving friends</h3>
+    <h3><i class="fa fa-crosshairs" aria-hidden="true"></i> Send dogs to your friends as a prank!</h3>
+  </ul>
+  <%= form_for :sms do |f| %>
+    <div class='form-group'>
+      <%= f.label :phone_number %><br>
+      <%= f.text_field :phone_number %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :message %><br>
+      <%= f.text_area :message %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :dog_pictures, 'Select your package' %><br>
+      <%= f.select(:dog_pictures, [['The Pug: 3 pictures for $1.00', 3], ['The Labrador: 6 pictures for $2.00', 6], ['The Mastiff: 10 pictures for $3.00', 10]]) %>
+    </div>
+    <script src="https://checkout.stripe.com/checkout.js"      class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Cocoa.dog"
+          data-locale="auto"></script>
+  <% end %>
+</center>
+
+<script>
+  $(document).ready(function() {
+    $('.sms_phone_number').mask('(000) 000-0000')
+  });
+</script>
