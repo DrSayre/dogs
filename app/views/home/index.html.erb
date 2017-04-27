@@ -12,8 +12,8 @@
     <h3><i class="fa fa-heart" aria-hidden="true"></i> Send dogs to your dog loving friends!</h3>
     <h3><i class="fa fa-crosshairs" aria-hidden="true"></i> Send dogs to your friends as a prank!</h3>
   </ul>
-  <div class='row'>
-    <div class='col-xs-6'>
+  <div class='row top-padding'>
+    <div class='col-xs-12 col-md-6'>
       <%= form_for :sms do |f| %>
         <div class='form-group'>
           <%= f.label :phone_number %><br>
@@ -34,11 +34,11 @@
           data-label="Send Pictures"></script>
       <% end %>
     </div>
-    <div class='col-xs-6'>
+    <div class='col-xs-12 col-md-6'>
       <%= image_tag 'example.jpg' %>
     </div>
   </div>
-  <div class='container'>
+  <div class='container top-padding'>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Terms and Conditions</h3>
@@ -49,6 +49,7 @@
         <p>We do not store any Credit Card information and we never see your credit card information. All transactions are processed through <%= link_to 'Stripe', 'http://stripe.com' %>.</p>
         <p>I hope to have bitcoin as a payment method soon.</p>
         <p>Email <%= mail_to 'cocoa-dog@mail.com' %> with any problems, questions, comments, etc. and I will respond as soon as possible.</p>
+        <p>If a phone number cannot recieve pictures (Multimedia Messaging Service, or MMS), then a text will be sent with a short url to pictures of dogs.</p>
       </div>
     </div>
   </div>
