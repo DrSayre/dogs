@@ -30,7 +30,8 @@
         <script src="https://checkout.stripe.com/checkout.js"      class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Cocoa.dog"
-          data-locale="auto"></script>
+          data-locale="auto"
+          data-label="Send Pictures"></script>
       <% end %>
     </div>
     <div class='col-xs-6'>

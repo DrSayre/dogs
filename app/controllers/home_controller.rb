@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 
   def create
     begin
+      print "\n*********\n#{Rails.configuration.stripe[:publishable_key]}\n********\n"
       @amount = helpers.price(params[:sms][:dog_pictures].to_i)
 
       customer = Stripe::Customer.create(
