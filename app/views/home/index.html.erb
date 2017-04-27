@@ -46,10 +46,11 @@
       <div class="panel-body">
         <p>Cocoa.dog can only send pictures to phone numbers in the United States</p>
         <p>Standard text messaging charges may apply. Cocoa.dog is not responsible for any charges that appear on your phone bill.</p>
-        <p>We do not store any Credit Card information and we never see your credit card information. All transactions are processed through <%= link_to 'Stripe', 'http://stripe.com' %>.</p>
+        <p>We do not store any credit card information and we never see your credit card information. All transactions are processed through <%= link_to 'Stripe', 'http://stripe.com' %>.</p>
         <p>I hope to have bitcoin as a payment method soon.</p>
         <p>Email <%= mail_to 'cocoa-dog@mail.com' %> with any problems, questions, comments, etc. and I will respond as soon as possible.</p>
-        <p>If a phone number cannot recieve pictures (Multimedia Messaging Service, or MMS), then a text will be sent with a short url to pictures of dogs.</p>
+        <p>If a phone number cannot recieve pictures (Multimedia Messaging Service, or MMS), then a SMS message containing the pictures of dogs will be sent instead.</p>
+        <p>All pictures are from <%= link_to 'Unsplash (a website with free to use pictures)', 'https://unsplash.com/search/dogs' %> or from a <%= link_to 'Google image search (labeled for reuse)', 'https://www.google.com/search?tbm=isch&q=dogs&tbs=imgo:1#q=dogs&tbs=imgo:1,sur:fc&tbm=isch' %>.
       </div>
     </div>
   </div>
