@@ -37,6 +37,20 @@
       <%= image_tag 'example.jpg' %>
     </div>
   </div>
+  <div class='container'>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Terms and Conditions</h3>
+      </div>
+      <div class="panel-body">
+        <p>Cocoa.dog can only send pictures to phone numbers in the United States</p>
+        <p>Standard text messaging charges may apply. Cocoa.dog is not responsible for any charges that appear on your phone bill.</p>
+        <p>We do not store any Credit Card information and we never see your credit card information. All transactions are processed through <%= link_to 'Stripe', 'http://stripe.com' %>.</p>
+        <p>I hope to have bitcoin as a payment method soon.</p>
+        <p>Email <%= mail_to 'cocoa-dog@mail.com' %> with any problems, questions, comments, etc. and I will respond as soon as possible.</p>
+      </div>
+    </div>
+  </div>
 </center>
 
 <script>
