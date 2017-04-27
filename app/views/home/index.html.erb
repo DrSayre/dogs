@@ -12,24 +12,31 @@
     <h3><i class="fa fa-heart" aria-hidden="true"></i> Send dogs to your dog loving friends!</h3>
     <h3><i class="fa fa-crosshairs" aria-hidden="true"></i> Send dogs to your friends as a prank!</h3>
   </ul>
-  <%= form_for :sms do |f| %>
-    <div class='form-group'>
-      <%= f.label :phone_number %><br>
-      <%= f.text_field :phone_number, {class: 'form-control', onkeypress: 'return event.charCode >= 48 && event.charCode <= 57', maxlength: 10, size: 10} %>
-    </div>
-    <div class='form-group'>
-      <%= f.label :message %><br>
-      <%= f.text_area :message, {class: 'form-control', maxlength: 1600} %>
-    </div>
-    <div class='form-group'>
-      <%= f.label :dog_pictures, 'Select your package' %><br>
-      <%= f.select :dog_pictures, [['The Pug: 3 pictures for $1.00', 3], ['The Labrador: 6 pictures for $2.00', 6], ['The Mastiff: 10 pictures for $3.00', 10]], {}, {class: 'form-control'} %>
-    </div>
-    <script src="https://checkout.stripe.com/checkout.js"      class="stripe-button"
+  <div class='row'>
+    <div class='col-xs-6'>
+      <%= form_for :sms do |f| %>
+        <div class='form-group'>
+          <%= f.label :phone_number %><br>
+          <%= f.text_field :phone_number, {class: 'form-control', onkeypress: 'return event.charCode >= 48 && event.charCode <= 57', maxlength: 10, size: 10, placeholder: 'Phone Number (5558675309)'} %>
+        </div>
+        <div class='form-group'>
+          <%= f.label :message %><br>
+          <%= f.text_area :message, {class: 'form-control', maxlength: 1600, placeholder: 'Message to be delieved with pictures'} %>
+        </div>
+        <div class='form-group'>
+          <%= f.label :dog_pictures, 'Select your package' %><br>
+          <%= f.select :dog_pictures, [['The Pug: 3 pictures for $1.00', 3], ['The Labrador: 6 pictures for $2.00', 6], ['The Mastiff: 10 pictures for $3.00', 10]], {}, {class: 'form-control'} %>
+        </div>
+        <script src="https://checkout.stripe.com/checkout.js"      class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="Cocoa.dog"
           data-locale="auto"></script>
-  <% end %>
+      <% end %>
+    </div>
+    <div class='col-xs-6'>
+      <%= image_tag 'example.jpg' %>
+    </div>
+  </div>
 </center>
 
 <script>
